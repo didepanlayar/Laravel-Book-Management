@@ -7,3 +7,4 @@ php arisan migrate;
 php artisan make:seeder AdministratorSeeder;
 php artisan db:seed --class=AdministratorSeeder
 php artisan make:controller UserController --resource
+php artisan storage:link
