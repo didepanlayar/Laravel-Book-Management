@@ -3,6 +3,11 @@
 @section("title") Users List @endsection 
 
 @section("content")
+    @if(session('status'))
+        <div class="alert alert-success">
+            {{session('status')}}
+        </div>
+    @endif
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -28,6 +33,11 @@
                 </td>
                 <td>
                     <a class="btn btn-info text-white btn-sm" href="{{route('users.edit', [$user->id])}}">Edit</a>
+                    <form action="{{route('users.destroy', [$user->id])}}" method="POST" onsubmit="return confirm('Delete this user permanently?')" class="d-inline">
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                    </form>
                 </td>
             </tr>
             @endforeach
