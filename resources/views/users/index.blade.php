@@ -32,6 +32,7 @@
                     @endif
                 </td>
                 <td>
+                    <a class="btn btn-primary btn-sm" href="{{route('users.show', [$user->id])}}">Detail</a>
                     <a class="btn btn-info text-white btn-sm" href="{{route('users.edit', [$user->id])}}">Edit</a>
                     <form action="{{route('users.destroy', [$user->id])}}" method="POST" onsubmit="return confirm('Delete this user permanently?')" class="d-inline">
                         @csrf
