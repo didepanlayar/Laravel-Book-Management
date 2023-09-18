@@ -110,6 +110,7 @@ class UserController extends Controller
         $user = \App\Models\User::findOrFail($id);
 
         $user->name = $request->get('name');
+        $user->status = $request->get('status');
         $user->roles = json_encode($request->get('roles'));
         $user->address = $request->get('address');
         $user->phone = $request->get('phone');
