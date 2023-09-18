@@ -10,6 +10,9 @@
     @endif
     <div class="row">
         <div class="col-md-6">
+            <a href="{{route('users.create')}}" class="btn btn-primary">Create User</a>
+        </div>
+        <div class="col-md-6">
             <form action="{{route('users.index')}}">
                 <div class="input-group mb-3">
                     <input class="form-control col-md-10" type="text" name="keyword" value="{{Request::get('keyword')}}" placeholder="Search by email..." />
