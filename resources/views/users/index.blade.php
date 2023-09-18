@@ -78,5 +78,12 @@
             </tr>
             @endforeach
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="10">
+                    {{$users->appends(Request::all())->links()}}
+                </td>
+            </tr>
+        </tfoot>
     </table>
 @endsection
