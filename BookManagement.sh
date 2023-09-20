@@ -8,3 +8,5 @@ php artisan make:seeder AdministratorSeeder;
 php artisan db:seed --class=AdministratorSeeder
 php artisan make:controller UserController --resource
 php artisan storage:link
+php artisan make:migration create_categories_table;
+php artisan migrate
