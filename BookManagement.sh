@@ -10,3 +10,4 @@ php artisan make:controller UserController --resource
 php artisan storage:link
 php artisan make:migration create_categories_table;
 php artisan migrate
+php artisan make:model Category;
