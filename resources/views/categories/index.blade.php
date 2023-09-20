@@ -44,7 +44,9 @@
                             </center>
                         </td>
                         <td>
-                            <center>TODO: Action</center>
+                            <center>
+                                <a class="btn btn-info text-white btn-sm" href="{{route('categories.edit', [$category->id])}}">Edit</a>
+                            </center>
                         </td>
                     </tr>
                     @endforeach
