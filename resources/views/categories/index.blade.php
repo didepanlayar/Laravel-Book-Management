@@ -45,6 +45,7 @@
                         </td>
                         <td>
                             <center>
+                                <a class="btn btn-primary btn-sm" href="{{route('categories.show', [$category->id])}}">Detail</a>
                                 <a class="btn btn-info text-white btn-sm" href="{{route('categories.edit', [$category->id])}}">Edit</a>
                             </center>
                         </td>
