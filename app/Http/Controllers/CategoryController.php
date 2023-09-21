@@ -146,4 +146,16 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index')->with('status', 'Category successfully restored.');
     }
+
+    public function remove($id) {
+        $category = \App\Models\Category::withTrashed()->findOrFail($id);
+
+        if(!$category->trashed()) {
+            return redirect()->route('categories.index')->with('status', 'Can not delete permanent active category.');
+        } else {
+            $category->forceDelete();
+
+            return redirect()->route('categories.index')->with('status', 'Category permanently deleted.');
+        }
+    }
 }

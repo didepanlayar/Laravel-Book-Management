@@ -65,6 +65,11 @@
                         <td>
                             <center>
                                 <a class="btn btn-success" href="{{route('categories.restore', [$category->id])}}">Restore</a>
+                                <form class="d-inline" action="{{route('categories.remove', [$category->id])}}" method="POST" onsubmit="return confirm('Delete this category permanently?')">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="DELETE" />
+                                    <input type="submit" class="btn btn-danger" value="Delete" />
+                                </form>
                             </center>
                         </td>
                     </tr>
