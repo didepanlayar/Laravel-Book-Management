@@ -1,6 +1,6 @@
 @extends('layouts.global')
 
-@section('title') Category List @endsection
+@section('title') Category Trashed @endsection
 
 @section('content')
     @if(session('status'))
@@ -29,10 +29,10 @@
         <div class="col-md-6">
             <ul class="nav nav-pills card-header-pills">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{route('categories.index')}}">Published</a>
+                    <a class="nav-link" href="{{route('categories.index')}}">Published</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('categories.trash')}}">Trash</a>
+                    <a class="nav-link active" href="{{route('categories.trash')}}">Trash</a>
                 </li>
             </ul>
         </div>
@@ -64,13 +64,7 @@
                         </td>
                         <td>
                             <center>
-                                <a class="btn btn-primary btn-sm" href="{{route('categories.show', [$category->id])}}">Detail</a>
-                                <a class="btn btn-info text-white btn-sm" href="{{route('categories.edit', [$category->id])}}">Edit</a>
-                                <form class="d-inline" action="{{route('categories.destroy', [$category->id])}}" method="POST" onsubmit="return confirm('Move category to trash?')">
-                                    @csrf
-                                    <input type="hidden" value="DELETE" name="_method">
-                                    <input type="submit" class="btn btn-danger btn-sm" value="Trash">
-                                </form>
+                                [TODO: Action]
                             </center>
                         </td>
                     </tr>
