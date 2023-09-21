@@ -64,7 +64,7 @@
                         </td>
                         <td>
                             <center>
-                                [TODO: Action]
+                                <a class="btn btn-success" href="{{route('categories.restore', [$category->id])}}">Restore</a>
                             </center>
                         </td>
                     </tr>
