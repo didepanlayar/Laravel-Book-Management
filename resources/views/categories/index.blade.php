@@ -3,6 +3,15 @@
 @section('title') Category List @endsection
 
 @section('content')
+    @if(session('status'))
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-warning">
+                    {{session('status')}}
+                </div>
+            </div>
+        </div>
+    @endif 
     <div class="row mb-3">
         <div class="col-md-6">
             <a href="{{route('categories.create')}}" class="btn btn-primary">Create Category</a>
@@ -47,6 +56,11 @@
                             <center>
                                 <a class="btn btn-primary btn-sm" href="{{route('categories.show', [$category->id])}}">Detail</a>
                                 <a class="btn btn-info text-white btn-sm" href="{{route('categories.edit', [$category->id])}}">Edit</a>
+                                <form class="d-inline" action="{{route('categories.destroy', [$category->id])}}" method="POST" onsubmit="return confirm('Move category to trash?')">
+                                    @csrf
+                                    <input type="hidden" value="DELETE" name="_method">
+                                    <input type="submit" class="btn btn-danger btn-sm" value="Trash">
+                                </form>
                             </center>
                         </td>
                     </tr>
