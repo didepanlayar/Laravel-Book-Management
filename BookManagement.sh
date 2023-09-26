@@ -14,3 +14,5 @@ php artisan make:model Category;
 php artisan make:controller CategoryController --resource;
 php artisan make:migration create_books_table;
 php artisan migrate;
+php artisan make:migration create_book_category_table;
+php artisan migrate;
