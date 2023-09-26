@@ -16,3 +16,4 @@ php artisan make:migration create_books_table;
 php artisan migrate;
 php artisan make:migration create_book_category_table;
 php artisan migrate;
+php artisan make:model Book;
