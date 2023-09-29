@@ -50,7 +50,9 @@
                         <td>{{$book->stock}}</td>
                         <td>{{$book->price}}</td>
                         <td>
-                            <center>[TODO: actions]</center>
+                            <center>
+                                <a class="btn btn-info text-white btn-sm" href="{{route('books.edit', [$book->id])}}">Edit</a>
+                            </center>
                         </td>
                     </tr>
                     @endforeach
