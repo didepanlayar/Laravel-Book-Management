@@ -5,6 +5,11 @@
 @section('content') 
     <div class="row">
         <div class="col-md-12">
+            @if(session('status'))
+                <div class="alert alert-success">
+                    {{session('status')}}
+                </div>
+            @endif
             <div class="row mb-3">
                 <div class="col-md-6">
                     <a href="{{route('books.create')}}" class="btn btn-primary">Create Book</a>
@@ -52,6 +57,11 @@
                         <td>
                             <center>
                                 <a class="btn btn-info text-white btn-sm" href="{{route('books.edit', [$book->id])}}">Edit</a>
+                                <form class="d-inline" action="{{route('books.destroy', [$book->id])}}" method="POST" onsubmit="return confirm('Move book to trash?')">
+                                    @csrf
+                                    <input type="hidden" value="DELETE" name="_method">
+                                    <input type="submit" class="btn btn-danger btn-sm" value="Trash">
+                                </form>
                             </center>
                         </td>
                     </tr>
