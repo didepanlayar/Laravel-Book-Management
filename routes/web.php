@@ -33,4 +33,5 @@ Route::get('/categories/trash', [CategoryController::class, 'trash'])->name('cat
 Route::get('/categories/{id}/restore', [CategoryController::class, 'restore'])->name('categories.restore');
 Route::delete('/categories/{id}/remove', [CategoryController::class, 'remove'])->name('categories.remove');
 Route::resource('categories', CategoryController::class);
+Route::get('/books/trash', [BookController::class, 'trash'])->name('books.trash');
 Route::resource('books', BookController::class);
