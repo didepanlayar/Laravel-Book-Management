@@ -16,16 +16,6 @@
         <div class="col-md-2">
             <a href="{{route('categories.create')}}" class="btn btn-primary">Create Category</a>
         </div>
-        <div class="col-md-4">
-            <ul class="nav nav-pills card-header-pills">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('categories.index')}}">Published</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="{{route('categories.trash')}}">Trash</a>
-                </li>
-            </ul>
-        </div>
         <div class="col-md-6">
             <form action="{{route('categories.index')}}">
                 <div class="input-group">
@@ -35,6 +25,16 @@
                     </div>
                 </div>
             </form>
+        </div>
+        <div class="col-md-4">
+            <ul class="nav nav-pills card-header-pills justify-content-end pr-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('categories.index')}}">Published</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{route('categories.trash')}}">Trash</a>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="row">
