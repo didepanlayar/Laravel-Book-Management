@@ -76,6 +76,11 @@
                                     @csrf
                                     <input type="submit" value="Restore" class="btn btn-success" />
                                 </form>
+                                <form method="POST" action="{{route('books.delete', [$book->id])}}" class="d-inline" onsubmit="return confirm('Delete this book permanently?')">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="submit" value="Delete" class="btn btn-danger">
+                                </form>
                             </center>
                         </td>
                     </tr>

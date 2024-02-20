@@ -168,4 +168,20 @@ class BookController extends Controller
             return redirect()->route('books.trash')->with('status', 'Book is not in trash.');
         }
     }
+
+    // Delete Permanent
+    public function delete_permanent($id)
+    {
+        $book = \App\Models\Book::withTrashed()->findOrFail($id);
+
+        if(!$book->trashed())
+        {
+            return redirect()->route('books.trash')->with('status', 'Book is not in trash.')->with('status_type', 'alert');
+        } else {
+            $book->categories()->detach();
+            $book->forceDelete();
+
+            return redirect()->route('books.trash')->with('status', 'Book permanently deleted.');
+        }
+    }
 }
