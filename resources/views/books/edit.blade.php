@@ -76,7 +76,7 @@
     <script>
         $('#categories').select2({
             ajax: {
-                url: 'http://bookmanagement.org/ajax/categories/search',
+                url: 'http://book.laravel.org/ajax/categories/search',
                 processResults: function(data) {
                     return {
                         results: data.map(function(item) {
