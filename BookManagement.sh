@@ -23,3 +23,4 @@ php artisan migrate;
 php artisan make:migration create_book_order_table;
 php artisan migrate;
 php artisan make:model Order;
+php artisan make:controller OrderController --resource;
