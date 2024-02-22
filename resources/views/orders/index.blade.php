@@ -41,7 +41,11 @@
                         <td><center>{{$order->totalQuantity}} pc (s)</center></td>
                         <td><center>{{$order->created_at}}</center></td>
                         <td><center>{{$order->total_price}}</center></td>
-                        <td><center>[TODO: Actions]</center></td>
+                        <td>
+                            <center>
+                                <a class="btn btn-info text-white btn-sm" href="{{route('orders.edit', [$order->id])}}">Edit</a>
+                            </center>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
