@@ -3,6 +3,25 @@
 @section('title') Orders List @endsection 
 
 @section('content') 
+    <form action="{{route('orders.index')}}">
+        <div class="row mb-3">
+            <div class="col-md-5">
+                <input value="{{Request::get('email')}}" name="email" type="text" class="form-control" placeholder="Search by email...">
+            </div>
+            <div class="col-md-2">
+                <select name="status" class="form-control" id="status">
+                    <option value="">Status</option>
+                    <option {{Request::get('status')=="Submit" ? "selected" : "" }} value="Submit">Submit</option>
+                    <option {{Request::get('status')=="Process" ? "selected" : "" }} value="Process">Process</option>
+                    <option {{Request::get('status')=="Finish" ? "selected" : "" }} value="Finish">Finish</option>
+                    <option {{Request::get('status')=="Cancel" ? "selected" : "" }} value="Cancel">Cancel</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <input type="submit" value="Filter" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
     <div class="row">
         <div class="col-md-12">
             <table class="table table-bordered table-stripped">
