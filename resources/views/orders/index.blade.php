@@ -38,34 +38,34 @@
                 </thead>
                 <tbody>
                     @foreach($orders as $order)
-                    <tr>
-                        <td><center>{{$order->invoice_number}}</center></td>
-                        <td>
-                            <center>
-                                @if($order->status == "Submit")
-                                    <span class="badge bg-warning text-light">{{$order->status}}</span>
-                                @elseif($order->status == "Process")
-                                    <span class="badge bg-info text-light">{{$order->status}}</span>
-                                @elseif($order->status == "Finish")
-                                    <span class="badge bg-success text-light">{{$order->status}}</span>
-                                @elseif($order->status == "Cancel")
-                                    <span class="badge bg-dark text-light">{{$order->status}}</span>
-                                @endif
-                            </center>
-                        </td>
-                        <td>
-                            {{$order->user->name}}<br>
-                            <small>{{$order->user->email}}</small>
-                        </td>
-                        <td><center>{{$order->totalQuantity}} pc (s)</center></td>
-                        <td><center>{{$order->created_at}}</center></td>
-                        <td><center>{{$order->total_price}}</center></td>
-                        <td>
-                            <center>
-                                <a class="btn btn-info text-white btn-sm" href="{{route('orders.edit', [$order->id])}}">Edit</a>
-                            </center>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><center>{{$order->invoice_number}}</center></td>
+                            <td>
+                                <center>
+                                    @if($order->status == "Submit")
+                                        <span class="badge bg-warning text-light">{{$order->status}}</span>
+                                    @elseif($order->status == "Process")
+                                        <span class="badge bg-info text-light">{{$order->status}}</span>
+                                    @elseif($order->status == "Finish")
+                                        <span class="badge bg-success text-light">{{$order->status}}</span>
+                                    @elseif($order->status == "Cancel")
+                                        <span class="badge bg-dark text-light">{{$order->status}}</span>
+                                    @endif
+                                </center>
+                            </td>
+                            <td>
+                                {{$order->user->name}}<br>
+                                <small>{{$order->user->email}}</small>
+                            </td>
+                            <td><center>{{$order->totalQuantity}} pc (s)</center></td>
+                            <td><center>{{$order->created_at}}</center></td>
+                            <td><center>{{$order->total_price}}</center></td>
+                            <td>
+                                <center>
+                                    <a class="btn btn-info text-white btn-sm" href="{{route('orders.edit', [$order->id])}}">Edit</a>
+                                </center>
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
