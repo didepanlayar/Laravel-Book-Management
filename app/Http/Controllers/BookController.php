@@ -43,6 +43,16 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            "title" => "required|min:5|max:200",
+            "description" => "required|min:20|max:1000",
+            "author" => "required|min:3|max:100",
+            "publisher" => "required|min:3|max:200",
+            "price" => "required|digits_between:0,10",
+            "stock" => "required|digits_between:0,10",
+            "cover" => "required"
+        ])->validate();
+
         $new_book = new \App\Models\Book;
         $new_book->title = $request->get('title');
         $new_book->description = $request->get('description');
