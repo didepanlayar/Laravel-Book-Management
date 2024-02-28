@@ -4,9 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Gate;
 
 class CategoryController extends Controller
 {
+    public function __construct() {
+        $this->middleware(function($request, $next) {
+            if(Gate::allows('manage-categories')) {
+                return $next($request);
+            } else {
+                abort(403, 'You do not have access rights.');
+            }
+        });
+    }
+
     /**
      * Display a listing of the resource.
      *
